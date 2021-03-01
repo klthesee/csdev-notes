@@ -1,0 +1,20 @@
+
+# 2 tomcat源码
+1.standarServer 除了实现了Server接口还继承了Liftcycle
+好处：生命周期统一接口Liftcyle把所有启动、停止、关闭都放在一起统一管理
+一个server有多个service。tomcat只有一个server
+
+2.service 一个service有多个Connector，但只有一个Container
+
+3.Connector使用ProtocolHandler处理请求：
+protocolHandler包含3个组件：Endpoint、Processor、Adapter
+Endpoint:处理底层的Socket连接
+Processor：将Endpoint接受到的连接包装成Request
+Adapter：将Request转换成ServletRequest交给Container处理
+
+4.Container
+Engine：只有一个命名为Catalina
+Host:一个Engin包含多个Host，使得一个服务器可以包含多个域名
+Context：一个应用，默认配置下webapps下每一个目录都是一个应用
+Wrapper：即一个Servlet
+

@@ -1,0 +1,7 @@
+
+
+内存中类的唯一性由类和类加载器决定。
+例如同一个tomcat容器中有两个war包，它们分别有一个相同类UserServiceImpl，tomcat是如何实现类隔离的。每一个war中都一个webappclassloader，分别由各自的这个类加载器去分别加载UserServiceImpl到内存，所以这两个类在内存中是隔离的。
+
+
+引入了线程上下文类加载器---》打破双亲委派模型。
