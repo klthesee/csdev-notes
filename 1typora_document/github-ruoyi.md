@@ -12,3 +12,4 @@
 - nacos-discovery 和 openfeign包含了hystrix
 
 ![image-20210302162628797](C:\Users\OO\Desktop\test\csdev-notes\1typora_document\github-ruoyi.assets\image-20210302162628797.png)
+![image-20201221101951782](G:\_document\1typora_document\ruoyi.assets\image-20201221101951782.png)
