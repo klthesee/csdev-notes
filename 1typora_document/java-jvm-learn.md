@@ -30,17 +30,16 @@ gc日志存放位置
 
 
 
-# 2.理论+实战 构建完整JVM知识体系
+# ch2 理论+实战 构建完整JVM知识体系
 
 
 
 - 学习资料
 github：
-vipcolud/monitor 
+1.vipcolud/monitor 
 jvm参数类型👽	jinfo & jps(参数和进程查看)👽	jstat(类加载、垃圾收集、JIT 编译)👽	jmap+MAT(内存溢出)👽	jstack(线程、死循环、死锁)👽	JVisualVM(本地和远程可视化监控👽
 使用 BTrace进行拦截调试👽	Tomcat 性能监控与调优👽	Nginx 性能监控与调优👽	JVM 层 GC 调优👽	JAVA代码层调优
-
-Angelswen/JVM-LearningAndOptimize
+2.Angelswen/JVM-LearningAndOptimize
 JVM学习笔记与调优实战
 JVM学习笔记与调优实战（一）：JVM内存结构
 JVM学习笔记与调优实战（二）：GC

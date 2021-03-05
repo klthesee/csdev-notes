@@ -10,7 +10,12 @@
 Collectors.groupby();
 Collectors.toList();
 Collectors.toSet();
+- 聚合
+//根据班级id聚合学生id
+        Map<Integer, List<Integer>> classUserListMap = kwHomeworkSaveDto.getUserList().stream()
+                .collect(Collectors.groupingBy(UserClassIdDto::getClassId, Collectors.mapping(UserClassIdDto::getUserId, Collectors.toList())));
 
+                
 2.map：将这个集合的所有元素转成另一个类型进行输出。
 
 ![image-20201229142902127](G:\_document\1typora_document\java8函数式编程.assets\image-20201229142902127.png)
@@ -27,4 +32,5 @@ Collectors.toSet();
 accumulator 的值就是想要的结果。
 
 ![image-20201229143632860](G:\_document\1typora_document\java8函数式编程.assets\image-20201229143632860.png)
+
 
