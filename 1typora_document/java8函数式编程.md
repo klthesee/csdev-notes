@@ -15,7 +15,9 @@ Collectors.toSet();
         Map<Integer, List<Integer>> classUserListMap = kwHomeworkSaveDto.getUserList().stream()
                 .collect(Collectors.groupingBy(UserClassIdDto::getClassId, Collectors.mapping(UserClassIdDto::getUserId, Collectors.toList())));
 
-                
+
+转成set集合如果有重复元素，怎么办？
+
 2.map：将这个集合的所有元素转成另一个类型进行输出。
 
 ![image-20201229142902127](G:\_document\1typora_document\java8函数式编程.assets\image-20201229142902127.png)

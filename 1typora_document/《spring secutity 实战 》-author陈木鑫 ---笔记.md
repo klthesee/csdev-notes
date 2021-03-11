@@ -36,10 +36,9 @@ SecurityConfiguration extends WebSecurityConfigurerAdapter
     ClientUserDetails impl UserDetails 用户的用户名、账号密码、用户角色信息，
 
 
-4. permitAll()之后的是要验证的
-.permitAll()
-                // 除上面外的所有请求全部需要鉴权认证
-                .anyRequest().authenticated();
+4. 
+.authenticated(); // 之前的路径需要认证
+.anyRequest().authenticated();
 
 permitAll()之前不需要验证
 .antMatchers(
@@ -83,3 +82,25 @@ http://localhost:8080/oauth/authorize?scope=read_userinfo&response_type=code&red
 会去请求授权服务器,
 然后输入第三方授权服务器的用户名和密码进行授权--》选择是否同意授权--》同意后回调到资源服务器
 3）授权成功后，访问本地资源
+
+把授权服务器的接口写到资源服务器的配置类中（能写到资源服务器中，`说明已经是可以信任的，授权服务器返回的权限信息就是当前用户的信息`）
+
+
+#### 尚硅谷：
+##### sec-base02
+- UserDetailsService
+这里把用户UserDetail装入s-sec。根据用户名查询用户（查出加密的密码装入UserDetail，用于ssec的调用加密方法进行校验）
+- UserDetail 
+s-sec从这里取出用户权限，如果为null说明该用户没有认证。
+- 继承WebSecurityConfigurerAdapter的配置类
+- 认证过滤器
+调用 `AuthenticationManager` 的`authenticate(uname,pwd,new arrlist())方法`进行身份认证(传入前端输入的用户名和密码)。
+认证通过后将权限信息传入redis中
+- 授权过滤器
+从redis中取出该用户的权限信息,进行校验。
+
+
+配置类中先调用
+UserDetailsService
+
+
