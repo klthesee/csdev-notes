@@ -6,3 +6,6 @@
  sync_binlog=1      ＃确保binlog日志写入后与硬盘同步
  binlog_checksum=crc32  ＃跳过现有的采用checksum的事件，mysql5.6.5以后的版本中binlog_checksum=crc32,而低版本都是binlog_checksum=none
  binlog_format=mixed   ＃bin-log日志文件格式，设置为MIXED可以防止主键重复。
+
+ 2. 忘记数据库密码
+ 
