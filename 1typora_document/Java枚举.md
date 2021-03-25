@@ -19,3 +19,6 @@ AppConst.id
  `authority_type` varchar(10) NOT NULL DEFAULT 'MENU' COMMENT '权限类型\n#AuthorizeType{MENU:菜单;RESOURCE:资源;}',
 ~~~
 
+2.
+枚举反编译
+
