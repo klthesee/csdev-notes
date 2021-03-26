@@ -111,3 +111,9 @@ uname -a # 查看内核/操作系统/CPU信息的linux系统信息命令
 四十七、cat /proc/swaps ：查看所有swap分区的信息
 
 
+4. netstat查看端口占用情况
+netstat –apn | grep 8080
+-a所有网络协议
+-p程序名
+-n 直接使用IP地址，而不通过域名服务器。
+https://www.runoob.com/linux/linux-comm-netstat.html
